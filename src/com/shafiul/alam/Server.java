@@ -75,47 +75,4 @@ public class Server {
 
         }
     }
-    /*class BroadCaster extends Thread{
-        @Override
-        public void run(){
-            while(true){
-                //System.out.println("From BroadCaster");
-                int i = 0;
-                //System.out.println(totalMessages.isEmpty());
-                while (!totalMessages.isEmpty()){
-                    String message = totalMessages.get(0);
-                    totalMessages.remove(0);
-                    System.out.println("There is message in totalMessages: " + message);
-                    for (int j = 0; j < totalClients.size(); j++){
-                        try{
-                            Socket socket = (Socket) totalClients.get(j);
-                            PrintWriter writer = new PrintWriter(socket.getOutputStream(), true);
-                            //String message = totalMessages.poll();
-
-                            writer.println(message);
-                            System.out.println("Want to send: " + message);
-                        }catch(IOException e) {
-                            System.out.println("Problem occurred whiel writing data: " + e.getMessage());
-                        }
-                    }
-
-                    *//*if (totalClients.size() > 0){
-                        try{
-                            Socket socket = (Socket) totalClients.get(i++);
-                            PrintWriter writer = new PrintWriter(socket.getOutputStream(), true);
-                            //String message = totalMessages.poll();
-                            String message = totalMessages.get(0);
-                            totalMessages.remove(0);
-                            writer.println(message);
-                            System.out.println("Want to send: " + message);
-                        }catch(IOException e) {
-                            System.out.println("Problem occurred whiel writing data: " + e.getMessage());
-                        }
-                    } else{
-                        System.out.println("No clients");
-                    }*//*
-                }
-            }
-        }
-    }*/
 }
